@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.nav{
+    width: 100%;
+    height: 10vh;
+    background-color: #417690;
+}
+.category-table{
+    width: 50%; 
+    margin-top: 5%;
+    transform: translate(50%,50%);
+}
+.category-thead{
+    background-color:#79aec8;
+}
+.table-div{
+    display: flex;
+}
+a.btn.btn-dark {
+    float: right;
+}

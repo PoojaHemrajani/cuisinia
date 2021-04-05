@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.esm.min.js" integrity="sha384-Eg5XYZrb+x0FMnsSAcaUNc6vJ/6B47jQvyhan3IGKcCfko9Hq6vS3s1PviSpNbdE" crossorigin="anonymous"></script>
+    <title>Cusinia</title>
+
+    <style>
+        .main-div{
+            width: 50%;
+            margin-left: 25%;
+            margin-top: 10%;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="main-div">
+        <form  method="POST" action="{{ url_for('forms') }}">
+            <div class="form-group">
+              <label for="exampleInputEmail1" style="margin: 10px;">Item Name</label>
+              <input type="text" class="form-control" name="item-name" aria-describedby="emailHelp" placeholder="Enter Name" >
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" style="margin: 10px;">Price</label>
+              <input type="number" class="form-control" name="price" placeholder="Price">
+            </div>
+            <select name="category" style="margin-top: 20px; width: 20%; height: 20%;">
+              {% for i in categories %}
+              <option value="{{ i[0] }}">{{ i[0] }}</option>
+              {% endfor  %}
+            </select>
+            <div style="display: flex;justify-content: center;align-items: center;margin-top: 20px;">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
